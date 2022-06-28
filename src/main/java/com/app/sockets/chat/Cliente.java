@@ -24,7 +24,7 @@ public class Cliente implements Runnable{
     @Override
     public void run() {
          
-        System.out.println("este es el mensaje " + mensaje);
+       
          //Host del servidor
          final String HOST = "127.0.0.1";
         
@@ -32,12 +32,11 @@ public class Cliente implements Runnable{
          DataOutputStream salida;
          
          try {
+             System.out.println("este es el mensaje " + mensaje);
              Socket socket = new Socket(HOST,puerto);
              salida = new DataOutputStream(socket.getOutputStream());
              
-             //Enviemos el mensaje
-             
-                     
+             //Enviemos el mensaje  
              salida.writeUTF(mensaje);
         } catch (Exception e) {
              System.out.println(e);
